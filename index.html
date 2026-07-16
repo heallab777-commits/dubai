@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yu-Wei Lai — Music Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --s0:#f6f4f1;--s1:#ffffff;--s2:#eeece9;
+  --tp:#1a1816;--ts:#5c5955;--tm:#9c9890;
+  --b:rgba(0,0,0,0.1);--bs:rgba(0,0,0,0.18);
+  --bw:#fdf0d0;--tw:#7a5100;--brd:#e2c060;--fw:#d4880d;
+  --ta:#1a6fb3;--r:8px;
+  --fs:'Inter',system-ui,sans-serif;--fm:'Courier New',monospace;
+}
+@media(prefers-color-scheme:dark){:root{
+  --s0:#111110;--s1:#1c1b19;--s2:#252420;
+  --tp:#e6e2db;--ts:#a09c95;--tm:#686460;
+  --b:rgba(255,255,255,0.1);--bs:rgba(255,255,255,0.18);
+  --bw:#271d00;--tw:#e8c870;--brd:#7a5c00;--fw:#d4880d;--ta:#6aabf0;
+}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fs);color:var(--tp);background:var(--s0);min-height:100vh}
+.wrap{max-width:780px;margin:0 auto}
+
+/* HERO */
+.hero{padding:3rem 2rem 2.5rem;border-bottom:0.5px solid var(--b);position:relative;overflow:hidden}
+.spectrum{position:absolute;top:1.5rem;right:2rem;display:flex;align-items:flex-end;gap:3px;height:48px;opacity:0.28}
+.bar{width:3px;background:var(--fw);border-radius:1px 1px 0 0}
+.eyebrow{font-family:var(--fm);font-size:11px;letter-spacing:.12em;color:var(--tm);text-transform:uppercase;margin-bottom:.75rem}
+.name{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2.8rem,9vw,5rem);font-weight:300;font-style:italic;line-height:.95;margin-bottom:.875rem}
+.name-zh{display:block;font-style:normal;font-weight:500;font-size:.52em;color:var(--ts);letter-spacing:.06em;margin-top:.35rem}
+.tagline{font-size:14px;color:var(--ts);line-height:1.75;max-width:500px;margin-bottom:1.4rem}
+.pills{display:flex;flex-wrap:wrap;gap:7px}
+.pill{font-size:11px;font-weight:500;padding:4px 12px;border-radius:var(--r);border:0.5px solid var(--bs);color:var(--ts);background:var(--s1);white-space:nowrap}
+.pill-g{background:var(--bw);color:var(--tw);border-color:var(--brd)}
+
+/* SECTIONS */
+.sec{padding:2rem;border-bottom:0.5px solid var(--b)}
+.sec-lbl{font-family:var(--fm);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--tm);margin-bottom:1.2rem}
+
+/* AWARDS */
+.awards{display:flex;flex-direction:column;gap:10px}
+.aw{display:flex;align-items:flex-start;gap:12px;padding:.875rem 1rem;background:var(--s1);border:0.5px solid var(--b);border-radius:12px}
+.aw-body{flex:1;min-width:0}
+.aw-t{font-size:13px;font-weight:500;color:var(--tp);margin-bottom:2px;line-height:1.4}
+.aw-o{font-size:12px;color:var(--ts)}
+.aw-y{font-family:var(--fm);font-size:10px;color:var(--tm);margin-top:3px}
+.aw-icon{font-size:17px;flex-shrink:0;margin-top:1px;line-height:1}
+.badge{flex-shrink:0;font-size:11px;font-weight:500;padding:3px 9px;border-radius:var(--r);background:var(--bw);color:var(--tw);border:0.5px solid var(--brd);white-space:nowrap;align-self:flex-start}
+.badge-n{background:var(--s2);color:var(--tm);border-color:var(--b)}
+.badge-s{background:var(--s2);color:var(--ts);border-color:var(--bs)}
+
+/* WORKS GRID */
+.wgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.wcard{background:var(--s1);border:0.5px solid var(--b);border-radius:12px;overflow:hidden;text-decoration:none;color:inherit;display:block;transition:border-color .15s}
+.wcard:hover{border-color:var(--bs)}
+.wthumb{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:var(--s0)}
+.wbody{padding:.875rem 1rem}
+.waward{font-family:var(--fm);font-size:10px;color:var(--tw);margin-bottom:3px;text-transform:uppercase;letter-spacing:.06em}
+.wtitle{font-family:'Cormorant Garamond',Georgia,serif;font-size:17px;font-weight:500;color:var(--tp);margin-bottom:2px;line-height:1.2}
+.wsub{font-size:11px;color:var(--tm)}
+.wlink{display:flex;align-items:center;gap:5px;margin-top:9px;font-size:11px;color:var(--ta);font-weight:500}
+
+/* HEAL LAB SECTION */
+.heal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.heal-card{background:var(--s1);border:0.5px solid var(--b);border-radius:12px;padding:1rem;text-decoration:none;color:inherit;display:block}
+.heal-card:hover{border-color:var(--bs)}
+.heal-tag{font-family:var(--fm);font-size:10px;color:var(--tm);text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px}
+.heal-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;font-weight:500;color:var(--tp);margin-bottom:3px}
+.heal-sub{font-size:11px;color:var(--tm);line-height:1.5}
+.heal-link{display:flex;align-items:center;gap:5px;margin-top:9px;font-size:11px;color:var(--ta);font-weight:500}
+
+/* BRANDS */
+.bgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.bcard{padding:1.25rem;background:var(--s1);border:0.5px solid var(--b);border-radius:12px}
+.bname{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-weight:500;margin-bottom:2px}
+.bsub{font-family:var(--fm);font-size:10px;color:var(--tm);text-transform:uppercase;letter-spacing:.08em;margin-bottom:9px}
+.bdesc{font-size:13px;color:var(--ts);line-height:1.65}
+
+/* ONLINE PORTFOLIO CALLOUT */
+.qr-box{background:var(--s1);border:0.5px solid var(--brd);border-radius:12px;padding:1.5rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.qr-placeholder{width:90px;height:90px;border:0.5px dashed var(--bs);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--tm);text-align:center;flex-shrink:0;font-family:var(--fm);line-height:1.4}
+.qr-text{flex:1;min-width:180px}
+.qr-title{font-size:13px;font-weight:500;color:var(--tp);margin-bottom:4px}
+.qr-url{font-family:var(--fm);font-size:12px;color:var(--ta);word-break:break-all;margin-bottom:6px}
+.qr-desc{font-size:12px;color:var(--ts);line-height:1.6}
+
+/* LINKS */
+.lgrid{display:flex;flex-wrap:wrap;gap:8px}
+.lbtn{display:inline-flex;align-items:center;gap:7px;padding:7px 14px;font-size:12px;font-weight:500;border:0.5px solid var(--bs);border-radius:var(--r);background:var(--s1);color:var(--tp);text-decoration:none}
+.lbtn:hover{background:var(--s2)}
+.lsec{margin-top:1.25rem}
+.lsec-lbl{font-family:var(--fm);font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--tm);margin-bottom:8px}
+
+/* FOOTER */
+.foot{padding:1.5rem 2rem;font-size:11px;color:var(--tm);display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
+
+@media(max-width:500px){
+  .bgrid,.wgrid,.heal-grid{grid-template-columns:1fr}
+  .hero{padding:2rem 1.25rem 1.75rem}
+  .sec{padding:1.5rem 1.25rem}
+  .name{font-size:2.8rem}
+  .qr-box{flex-direction:column}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="spectrum" id="bars"></div>
+  <div class="eyebrow">Golden Visa Portfolio · Culture &amp; Arts · Dubai</div>
+  <div class="name">Yu-Wei Lai<span class="name-zh">賴昱瑋</span></div>
+  <p class="tagline">Acoustic engineer and composer bridging 16 years of hardware sound design with award-winning original songwriting. Based in Taiwan, building toward Dubai.</p>
+  <div class="pills">
+    <span class="pill pill-g">Ministry of Culture — 2 Awards</span>
+    <span class="pill pill-g">Eslite Grand Champion</span>
+    <span class="pill pill-g">Jiaoxi Gold Award</span>
+    <span class="pill pill-g">Classical Poetry — 3 Consecutive Years</span>
+    <span class="pill">16 yr acoustic engineering</span>
+    <span class="pill">MSc Mechanical Engineering</span>
+  </div>
+</div>
+
+<!-- AWARDS -->
+<div class="sec">
+  <div class="sec-lbl">Recognition</div>
+  <div class="awards">
+
+    <div class="aw">
+      <div class="aw-icon" style="color:var(--tw)">🏆</div>
+      <div class="aw-body">
+        <div class="aw-t">Original Music Award — Merit (佳作)</div>
+        <div class="aw-o">Ministry of Culture, Taiwan · "The Rain of Yilan" (宜蘭的雨)</div>
+        <div class="aw-y">2013</div>
+      </div>
+      <div class="badge">Merit</div>
+    </div>
+
+    <div class="aw">
+      <div class="aw-icon" style="color:var(--tw)">🏆</div>
+      <div class="aw-body">
+        <div class="aw-t">Songwriting Contest — Grand Champion</div>
+        <div class="aw-o">Eslite Bookstore (誠品116) · "Meet at Exit 6" (相約在六號出口)</div>
+        <div class="aw-y">2015</div>
+      </div>
+      <div class="badge">Champion</div>
+    </div>
+
+    <div class="aw">
+      <div class="aw-icon" style="color:var(--tw)">🏆</div>
+      <div class="aw-body">
+        <div class="aw-t">Classical Poetry Songwriting — "Jinshi" Merit · 3 consecutive years</div>
+        <div class="aw-o">舊愛新歡詞曲創作大賽 · Composing modern melodies for classical Tang poetry</div>
+        <div class="aw-y">2015 · 2016 · 2017</div>
+      </div>
+      <div class="badge">Merit × 3</div>
+    </div>
+
+    <div class="aw">
+      <div class="aw-icon" style="color:var(--tw)">🏆</div>
+      <div class="aw-body">
+        <div class="aw-t">Jiaoxi Creative Gold Award — Champion</div>
+        <div class="aw-o">Jiaoxi Township · "Jiaoxi, a Perfect Day" (礁溪做好天)</div>
+        <div class="aw-y">2022</div>
+      </div>
+      <div class="badge">Gold</div>
+    </div>
+
+    <div class="aw">
+      <div class="aw-icon" style="color:var(--tw)">🏆</div>
+      <div class="aw-body">
+        <div class="aw-t">National Tung Blossom Contest — Excellence</div>
+        <div class="aw-o">桐花詞曲創作大賽 · Landscape-inspired acoustic composition</div>
+      </div>
+      <div class="badge">Excellence</div>
+    </div>
+
+    <div class="aw">
+      <div class="aw-icon" style="color:var(--tm)">📜</div>
+      <div class="aw-body">
+        <div class="aw-t">Original Music Award — Finalist (入圍)</div>
+        <div class="aw-o">Ministry of Culture, Taiwan · "Sail" (出航)</div>
+        <div class="aw-y">2019</div>
+      </div>
+      <div class="badge badge-s">Finalist</div>
+    </div>
+
+    <div class="aw">
+      <div class="aw-icon" style="color:var(--tm)">📜</div>
+      <div class="aw-body">
+        <div class="aw-t">National Talent Search — Top 10</div>
+        <div class="aw-o">Sony Music × Hennessy V.S.O.P · National commercial selection</div>
+        <div class="aw-y">2014</div>
+      </div>
+      <div class="badge badge-s">Top 10</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- SELECTED WORKS — Lucky Air -->
+<div class="sec">
+  <div class="sec-lbl">Selected works — Lucky Air (幸運空氣)</div>
+  <div class="wgrid">
+    <a class="wcard" href="https://www.youtube.com/watch?v=eup-iyNzsa8" target="_blank">
+      <img class="wthumb" src="https://img.youtube.com/vi/eup-iyNzsa8/hqdefault.jpg" alt="The Rain of Yilan">
+      <div class="wbody">
+        <div class="waward">Ministry of Culture · Merit 2013</div>
+        <div class="wtitle">The Rain of Yilan</div>
+        <div class="wsub">宜蘭的雨 · Piano, ambient rain, emotional strings</div>
+        <div class="wlink">▶ Watch on YouTube</div>
+      </div>
+    </a>
+    <a class="wcard" href="https://www.youtube.com/watch?v=-AYU93Uj0Dw" target="_blank">
+      <img class="wthumb" src="https://img.youtube.com/vi/-AYU93Uj0Dw/hqdefault.jpg" alt="Meet at Exit 6">
+      <div class="wbody">
+        <div class="waward">Eslite · Grand Champion 2015</div>
+        <div class="wtitle">Meet at Exit 6</div>
+        <div class="wsub">相約在六號出口 · Narrative urban folk-pop</div>
+        <div class="wlink">▶ Watch on YouTube</div>
+      </div>
+    </a>
+    <a class="wcard" href="https://www.youtube.com/watch?v=CQomTutw3LA" target="_blank">
+      <img class="wthumb" src="https://img.youtube.com/vi/CQomTutw3LA/hqdefault.jpg" alt="Jiaoxi a Perfect Day">
+      <div class="wbody">
+        <div class="waward">Jiaoxi · Gold Award</div>
+        <div class="wtitle">Jiaoxi, a Perfect Day</div>
+        <div class="wsub">礁溪做好天 · Hot spring landscape songwriting</div>
+        <div class="wlink">▶ Watch on YouTube</div>
+      </div>
+    </a>
+    <a class="wcard" href="https://www.youtube.com/watch?v=qXeQ1uW1NW4" target="_blank">
+      <img class="wthumb" src="https://img.youtube.com/vi/qXeQ1uW1NW4/hqdefault.jpg" alt="Old Love New Scholar">
+      <div class="wbody">
+        <div class="waward">Classical Poetry · Merit 2015–2017</div>
+        <div class="wtitle">Old Love, New Scholar</div>
+        <div class="wsub">舊愛新歡進士 · Tang poetry set to modern melody</div>
+        <div class="wlink">▶ Watch on YouTube</div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- HEAL LAB TRACKS -->
+<div class="sec">
+  <div class="sec-lbl">Healing audio — Heal Lab (暖響室)</div>
+  <p style="font-size:13px;color:var(--ts);line-height:1.7;margin-bottom:1.1rem;max-width:540px">Pure piano layered with natural soundscapes, calibrated using 16 years of psychoacoustic tuning standards. Designed for ambient relaxation in hospitality, wellness, and cultural spaces.</p>
+  <div class="heal-grid">
+    <a class="heal-card" href="https://www.youtube.com/watch?v=exxGYJBjYw8" target="_blank">
+      <div class="heal-tag">Heal Lab · Fire &amp; Water</div>
+      <div class="heal-title">Ocean Campfire</div>
+      <div class="heal-sub">Piano + coastal ambient · deep relaxation</div>
+      <div class="heal-link">▶ YouTube</div>
+    </a>
+    <a class="heal-card" href="https://www.youtube.com/watch?v=PWKe7rGYjLQ" target="_blank">
+      <div class="heal-tag">Heal Lab · Forest</div>
+      <div class="heal-title">Silence Forest</div>
+      <div class="heal-sub">Piano + forest ambient · mental clarity</div>
+      <div class="heal-link">▶ YouTube</div>
+    </a>
+    <a class="heal-card" href="https://www.youtube.com/watch?v=0Yq9R2mRwBc" target="_blank">
+      <div class="heal-tag">Heal Lab · Rain</div>
+      <div class="heal-title">Rain Healing</div>
+      <div class="heal-sub">Piano + rain ambient · stress reduction</div>
+      <div class="heal-link">▶ YouTube</div>
+    </a>
+  </div>
+</div>
+
+<!-- BRANDS -->
+<div class="sec">
+  <div class="sec-lbl">Brands</div>
+  <div class="bgrid">
+    <div class="bcard">
+      <div class="bname">Lucky Air</div>
+      <div class="bsub">幸運空氣 · Original songwriting</div>
+      <p class="bdesc">Narrative folk-pop with piano-forward arrangements. Five awards across national and regional songwriting competitions since 2013, including three consecutive Classical Poetry titles.</p>
+    </div>
+    <div class="bcard">
+      <div class="bname">Heal Lab</div>
+      <div class="bsub">暖響室 · Healing audio</div>
+      <p class="bdesc">Pure piano layered with natural soundscapes. Psychoacoustic tuning from 16 years of hardware audio engineering applied to wellness music — commercially licensable for hospitality and spa environments.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ENGINEERING -->
+<div class="sec">
+  <div class="sec-lbl">Engineering background</div>
+  <p style="font-size:14px;color:var(--ts);line-height:1.75;max-width:540px;margin-bottom:1.1rem">MSc Mechanical Engineering (Chang Gung University) · 16 years as Acoustic Design Lead at Compal Electronics. Specialising in micro-acoustic speaker architecture, spatial audio simulation, and psychoacoustic comfort tuning for global premium IT hardware. Silver medal, FIRA Roboworld Cup — San Francisco, 2007.</p>
+  <div class="pills">
+    <span class="pill">Micro-acoustic architecture</span>
+    <span class="pill">Spatial audio simulation</span>
+    <span class="pill">Psychoacoustic tuning</span>
+    <span class="pill">Mechatronic systems</span>
+    <span class="pill">FIRA Robotics — Silver 2007</span>
+  </div>
+</div>
+
+<!-- STREAMING -->
+<div class="sec">
+  <div class="sec-lbl">Streaming &amp; links</div>
+
+  <div class="lsec">
+    <div class="lsec-lbl">Lucky Air</div>
+    <div class="lgrid">
+      <a class="lbtn" href="https://www.youtube.com/watch?v=eup-iyNzsa8&list=PLIZYmQxG4dbg" target="_blank">▶ YouTube playlist</a>
+      <a class="lbtn" href="https://streetvoice.com/luckyair43" target="_blank">♪ Streetvoice</a>
+      <a class="lbtn" href="https://music.apple.com/tw/album/1573208555" target="_blank"> Apple Music</a>
+      <a class="lbtn" href="https://open.spotify.com/track/5Twf1iVhrNXSrv0q7Zlwjr" target="_blank">◎ Spotify</a>
+    </div>
+  </div>
+
+  <div class="lsec" style="margin-top:1rem">
+    <div class="lsec-lbl">Heal Lab</div>
+    <div class="lgrid">
+      <a class="lbtn" href="https://www.youtube.com/watch?v=exxGYJBjYw8" target="_blank">▶ Ocean Campfire</a>
+      <a class="lbtn" href="https://www.youtube.com/watch?v=PWKe7rGYjLQ" target="_blank">▶ Silence Forest</a>
+      <a class="lbtn" href="https://www.youtube.com/watch?v=0Yq9R2mRwBc" target="_blank">▶ Rain Healing</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="foot">
+  <span>Yu-Wei Lai (賴昱瑋) · Portfolio 2026</span>
+  <span>Application for Dubai Golden Visa · Culture &amp; Arts</span>
+</div>
+
+</div>
+<script>
+const h=[28,35,22,42,38,18,48,44,32,20,36,46,30,24,40,16,44,38,26,34,20,42,28,36];
+const c=document.getElementById('bars');
+if(c){h.forEach(v=>{const b=document.createElement('div');b.className='bar';b.style.height=v+'px';c.appendChild(b);})}
+</script>
+</body>
+</html>
